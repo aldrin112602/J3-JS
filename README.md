@@ -6,20 +6,20 @@
 Below is a list of the some of the things J3.JS can do:
 
 ### Complete J3.JS API Reference
-- <code><i>j3.hide(selector, callback)</i></code> - Hides HTML elements	
-- <code><i>j3.show(selector, callback)</i></code> - Shows HTML elements	
-- <code><i>j3.toggleShow(selector, callback)</i></code> - Toggles between hiding and showing HTML elements	
-- <code><i>j3.toggleClass(selector, class, callback)</i></code> - Toggles the class of HTML elements
-- <code><i>j3.removeClass(selector, className: String | Array[ ...classnames ], callback)</i></code> - Removes one or multiple classes from HTML elements
-- <code><i>j3.addClass(selector, className: String | [ ...classnames ], callback)</i></code> - Adds one or multiple classes to HTML elements	
-- <code><i>j3.addStyle(selector, stye: { prop: value } | string, callback)</i></code> -	Adds style to HTML elements		
-- <code><i>j3.filter(selector, value, callback)</i></code>	- Filters the display of HTML elements	
-- <code><i>j3.sort(selector, value, callback)</i></code>	-	Sorts the display of HTML elements (A - Z, 0 - 9)	
--	<code><i>j3.slideSHow(selector, [ ...srcs ], delay, callback)</i></code>	- Make image slideshow 
-- <code><i>j3.displayObject(selector, object, callback)</i></code>	-	Displays JavaScript objects in HTML	
-- <code><i>j3.includeHTML(callback)</i></code>	-	Displays HTML in HTML	
-- <code><i>j3.getHttpObject(url, callback)</i></code>	-	Reads JSON data from a server	
-- <code><i>j3.get(url, callback)</i></code> - Performed <b>GET</b> Request and	Reads data from a server
+- `j3.hide(selector, callback)` - Hides HTML elements
+- `j3.show(selector, callback)` - Shows HTML elements	
+- `j3.toggleShow(selector, callback)` - Toggles between hiding and showing HTML elements	
+- `j3.toggleClass(selector, class, callback)` - Toggles the class of HTML elements
+- `j3.removeClass(selector, className: String | Array[ ...classnames ], callback)` - Removes one or multiple classes from HTML elements
+- `j3.addClass(selector, className: String | [ ...classnames ], callback)` - Adds one or multiple classes to HTML elements	
+- `j3.addStyle(selector, stye: { prop: value } | string, callback)` -	Adds style to HTML elements		
+- `j3.filter(selector, value, callback)`	- Filters the display of HTML elements	
+- `j3.sort(selector, value, callback)`	-	Sorts the display of HTML elements (A - Z, 0 - 9)	
+- `j3.slideSHow(selector, [ ...srcs ], delay, callback)`	- Make image slideshow 
+- `j3.displayObject(selector, object, callback)`	-	Displays JavaScript objects in HTML	
+- `j3.includeHTML(callback)`	-	Displays HTML in HTML	
+- `j3.getHttpObject(url, callback)`	-	Reads JSON data from a server	
+- `j3.get(url, callback)` - Performed `GET` Request and	Reads data from a server
 ### Complete J3.JS Attribute Reference
 - <code><i>{ }</i></code>	- Defines where to display data	
 - <code><i>data-repeat="container"</i></code> -	Defines where to repeat data	
@@ -30,6 +30,7 @@ Below is a list of the some of the things J3.JS can do:
 There are only one ways to start using J3.JS on your web site:<br>
 - Download the J3.JS file
 - The J3.JS library is a single JavaScript file, and you reference it with the HTML <code><script></code> tag (notice that the <code><script></code> tag should be inside the <i>head</i> section) :
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +39,17 @@ There are only one ways to start using J3.JS on your web site:<br>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <!-- place J3.JS here -->
     <script src="j3.js"></script>
+    
 </head>
 <body>
     
 </body>
 </html>
  ```
+
 - <b>Tip:</b> Place the downloaded file in the same directory as the pages where you wish to use it.
 
 # Get started!
