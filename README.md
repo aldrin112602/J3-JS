@@ -90,4 +90,71 @@ j3.hide('.city');
 
 #### For a complete reference of all CSS selectors, please go to [CSS Selectors Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
+### J3.JS Hide & Show
+```javascript
+   j3.hide(selector: any, callback: Function)
+```
+
+*Note that you can use any CSS selectors. `callback function` is optional, it will call after the action or event's occured.*
+- Hiding Elements Using Element Id
+- To hide an element with a specified id, use a hash tag (#) in front of the id name.
+- Hide an element with `id="london":`
+
+Example: 
+```html
+<button onclick="j3.hide('#london')">Hide</button>
+```
+Full example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> j3.hide(selector) | J3.JS </title>
+
+    <!-- place J3.JS here -->
+    <script src="j3.js"></script>
+    
+</head>
+<body>
+
+    <button onclick="j3.hide('#london')"> Hide all element with an ID of london
+    </button>
+    <h1 id="london">Lorem ipsum dolor sit amet</h1>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <butto id="london">My button</butto>
+    
+</body>
+</html>
+```
+
+- Hiding Elements Using Element `class`
+- To hide an element with a specified class, use a hash tag (.) in front of the class name.
+- Hide all elements with `class="london":`
+```html
+<button onclick="j3.hide('.london')">Hide</button>
+```
+
+
+- Hiding Elements Using Element `tag name`
+- Hide all `<p>` elements:
+```html
+<button onclick="j3.hide('p')">Hide</button>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
