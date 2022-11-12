@@ -88,7 +88,7 @@ j3.hide('.city');
 | `("a[target=_blank]")` |	Selects all `<a>` elements with a target attribute value equal to `"_blank"` |
 | `("p:nth-child(even)")` |	Selects all even `<p>` elements |
 
-#### For a complete reference of all CSS selectors, please go to [CSS Selectors Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+For a complete reference of all CSS selectors, please go to [CSS Selectors Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
 ### J3.JS Hide & Show
 ```javascript
@@ -101,8 +101,14 @@ j3.hide('.city');
 - Hide an element with `id="london":`
 
 Example: 
+`Without callback function`
 ```html
 <button onclick="j3.hide('#london')">Hide</button>
+```
+
+`With callback function`
+```html
+<button onclick="j3.hide('#london', function () { alert('Hidden!') })">Hide</button>
 ```
 Full example:
 ```html
@@ -143,10 +149,28 @@ Full example:
 ```html
 <button onclick="j3.hide('p')">Hide</button>
 ```
-
-
-
-
+### J3.JS Add Style to HTML
+```javascript
+    // Syntax
+   j3.addStyle(selector: Any, stye: Object | String, callback: Function)
+```
+- Note: callback function is optional
+- Add multiple style properties using Object
+```javascript
+   // Example
+   let style = {
+        backgroundColor: "#fefefe",
+        border: "1px solid rgba(0,0,0,0.1)",
+        color: "dodgerblue"
+   };
+   // Apply styles to all button elements
+   j3.addStyle('button', style);
+```
+- Also you can add Add a CSS property value:
+```javascript
+   // Example
+   j3.add('p', 'color: red; font-size: 20px;');
+```
 
 
 
