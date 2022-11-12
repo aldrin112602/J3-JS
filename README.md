@@ -1,9 +1,19 @@
 # J3.JS - “ Less code, do More! 😎 ”
-### J3.JS library
--JavaScript library designed to simplify web development projects:  Easy to learn and easy to use.  Designed for fast application development.  Designed for all devices: PC, Tablet, and Mobile, Free to use and No licenses.
-
+JavaScript library designed to simplify web development projects:  Easy to learn and easy to use.  Designed for fast application development.  Designed for all devices: PC, Tablet, and Mobile, Free to use and No licenses.
 ### What Can J3.JS Do?
 Below is a list of the some of the things J3.JS can do:
+- Hide HTML elements
+- Show HTML elements
+- Toggle Show/hide HTML elements
+- Add class name/s to HTML elements
+- Remove class name/s of HTML elements
+- Toggle class name (add/remove) of HTML elements
+- Add styles property to HTML elements
+- Filter HTML elements
+- Sort HTML elements (A - Z)
+- Make image slide show
+- Display object properties/values to HTML elements using a placeholder `{ property_name }`
+- 
 
 ### Complete J3.JS API Reference
 - `j3.hide(selector, callback)` - Hides HTML elements
@@ -14,22 +24,22 @@ Below is a list of the some of the things J3.JS can do:
 - `j3.addClass(selector, className: String | [ ...classnames ], callback)` - Adds one or multiple classes to HTML elements	
 - `j3.addStyle(selector, stye: { prop: value } | string, callback)` -	Adds style to HTML elements		
 - `j3.filter(selector, value, callback)`	- Filters the display of HTML elements	
-- `j3.sort(selector, value, callback)`	-	Sorts the display of HTML elements (A - Z, 0 - 9)	
+- `j3.sort(selector, callback)`	-	Sorts the display of HTML elements (A - Z, 0 - 9)	
 - `j3.slideSHow(selector, [ ...srcs ], delay, callback)`	- Make image slideshow 
 - `j3.displayObject(selector, object, callback)`	-	Displays JavaScript objects in HTML	
 - `j3.includeHTML(callback)`	-	Displays HTML in HTML	
 - `j3.getHttpObject(url, callback)`	-	Reads JSON data from a server	
 - `j3.get(url, callback)` - Performed `GET` Request and	Reads data from a server
 ### Complete J3.JS Attribute Reference
-- <code><i>{ }</i></code>	- Defines where to display data	
-- <code><i>data-repeat="container"</i></code> -	Defines where to repeat data	
-- <code><i>data-html="sample-text.txt"</i></code> -	Defines where to include HTML
+- `{ }` - Defines where to display data	
+- `data-repeat="container"` -	Defines where to repeat data	
+- `data-html="sample-text.txt"` -	Defines where to include HTML
 
 
 ## Adding J3.JS to Your Web Pages
-There are only one ways to start using J3.JS on your web site:<br>
+There are only one ways to start using J3.JS on your web site: \
 - Download the J3.JS file
-- The J3.JS library is a single JavaScript file, and you reference it with the HTML <code><script></code> tag (notice that the <code><script></code> tag should be inside the <i>head</i> section) :
+- The J3.JS library is a single JavaScript file, and you reference it with the HTML `<script>` tag (notice that the `<script>` tag should be inside the `<head>` section) :
 
 ```html
 <!DOCTYPE html>
@@ -57,7 +67,7 @@ There are only one ways to start using J3.JS on your web site:<br>
 * J3.JS selects HTML elements and perform actions on the selected element(s):\
 Are you familiar with CSS selectors?\
 J3.JS uses the CSS syntax to select and manipulate HTML elements.\
-Selectors are used to "find" (select) HTML elements based on their tag name, id, classes, types, attributes, values of attributes and much more. A list of all selectors can be found in our CSS Selector Reference.\
+Selectors are used to "find" (select) HTML elements based on their tag name, id, classes, types, attributes, values of attributes and much more. A list of all selectors can be found in our CSS Selector Reference.
 
 Selector Examples:\
 Select HTML elements, use a tag name:\
@@ -92,7 +102,7 @@ For a complete reference of all CSS selectors, please go to [CSS Selectors Refer
 
 ### J3.JS Hide & Show
 ```javascript
-   j3.hide(selector: any, callback: Function)
+   j3.hide(selector: Any, callback: Function)
 ```
 
 *Note that you can use any CSS selectors. `callback function` is optional, it will call after the action or event's occured.*
@@ -139,6 +149,7 @@ Full example:
 - Hiding Elements Using Element `class`
 - To hide an element with a specified class, use a hash tag (.) in front of the class name.
 - Hide all elements with `class="london":`
+
 ```html
 <button onclick="j3.hide('.london')">Hide</button>
 ```
@@ -154,7 +165,14 @@ Full example:
     // Syntax
    j3.addStyle(selector: Any, stye: Object | String, callback: Function)
 ```
-- Note: callback function is optional
+- Note: callback function is optional, callback function will execute or being call after the event or action occured.
+```javascript
+  // Example
+  j3.addStyle('h2', 'color: red; font-size: 1rem;', function() {
+    console.log('Added styles to all h2 element');
+  })
+
+```
 - Add multiple style properties using Object
 ```javascript
    // Example
@@ -166,7 +184,7 @@ Full example:
    // Apply styles to all button elements
    j3.addStyle('button', style);
 ```
-- Also you can add Add a CSS property value:
+- Also you can add CSS properties using string:
 ```javascript
    // Example
    j3.add('p', 'color: red; font-size: 20px;');
