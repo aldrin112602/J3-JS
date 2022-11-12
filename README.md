@@ -36,7 +36,10 @@ Below is a list of the some of the things J3.JS can do:
 
 
 
-
+### Complete J3.JS Attribute Reference
+- <code><i>{ }</i></code>	- Defines where to display data	
+- <code><i>data-repeat="container"</i></code> -	Defines where to repeat data	
+- <code><i>data-html="sample-text.txt"</i></code> -	Defines where to include HTML
 
 
 
