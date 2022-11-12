@@ -1,6 +1,11 @@
-const j3 = {};
 
-// element selector return nodeList or element
+
+//       J3.JS LIBRARY
+//       NOVEMBER 12, 2022
+//       BY ALDRIN CABALLERO
+
+
+const j3 = {};
 const $ = (element_selector) => {
   let element =
     typeof element_selector == "string"
@@ -18,10 +23,6 @@ const $ = (element_selector) => {
   }
   return element;
 };
-
-// hide function
-// hide(selector, callback)
-
 j3.hide = function (selector, callback) {
   let e = $(selector);
   try {
@@ -42,10 +43,6 @@ j3.hide = function (selector, callback) {
     console.error(err);
   }
 };
-
-//  show function
-//  show(selector, callback)
-
 j3.show = function (selector, callback) {
   let e = $(selector);
   try {
@@ -62,10 +59,6 @@ j3.show = function (selector, callback) {
     console.error(err);
   }
 };
-
-//  toggleShow function
-//  toggleShow(selector, callback)
-
 j3.toggleShow = function (selector, callback) {
   let e = $(selector);
   try {
@@ -83,10 +76,6 @@ j3.toggleShow = function (selector, callback) {
     console.error(err);
   }
 };
-
-//  toggleClass function
-//  toggleClass(selector, class, callback)
-
 j3.toggleClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -103,10 +92,6 @@ j3.toggleClass = function (selector, className, callback) {
     console.error(err);
   }
 };
-
-// addClass function
-// addClass(selector, className: String | Array[...classnames], callback)
-
 j3.addClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -136,10 +121,6 @@ j3.addClass = function (selector, className, callback) {
     console.error(err);
   }
 };
-
-//  removeClass function
-//  removeClass(selector, className: String | Array[...classnames], callback)
-
 j3.removeClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -169,10 +150,6 @@ j3.removeClass = function (selector, className, callback) {
     console.error(err);
   }
 };
-
-//  addStyle function
-//  addStyle(selector, stye: { } | string, callback)
-
 j3.addStyle = function (selector, style, callback) {
   let e = $(selector);
   try {
@@ -210,10 +187,6 @@ j3.addStyle = function (selector, style, callback) {
     console.error(err);
   }
 };
-
-//  filter function
-//  filter(selector, value, callback)
-
 j3.filter = function (selector, value, callback) {
   let e = $(selector);
   try {
@@ -246,10 +219,6 @@ j3.filter = function (selector, value, callback) {
     console.error(err);
   }
 };
-
-//  sort function
-//  sort(selector, callback)
-
 j3.sort = function (selector, callback) {
   let e = $(selector);
   try {
@@ -274,10 +243,6 @@ j3.sort = function (selector, callback) {
     console.error(err);
   }
 };
-
-// slideShow function
-// slideSHow(selector, [ ...srcs ], delay, callback)
-
 j3.slideShow = function (selector, src, delay, callback) {
   let e = $(selector);
   try {
@@ -311,10 +276,6 @@ j3.slideShow = function (selector, src, delay, callback) {
     console.error(err);
   }
 };
-
-//  displayObject function
-//  displayObject(selector, object, callback)
-
 j3.displayObject = function (selector, object, callback) {
   let e = $(selector);
   try {
@@ -355,9 +316,6 @@ j3.displayObject = function (selector, object, callback) {
     console.error(err);
   }
 };
-
-// includeHTML function
-// includeHTML(callback)
 j3.includeHTML = function (callback) {
   [...document.querySelectorAll("*")]
     .filter((li) => li.getAttribute("data-html"))
@@ -378,9 +336,6 @@ j3.includeHTML = function (callback) {
       }
     });
 };
-
-// getHttpObject function
-// getHttpObject(url, callback)
 j3.getHttpObject = function (url, callback) {
   try {
     fetch(url)
@@ -399,9 +354,6 @@ for (const [k, v] of Object.entries(j3)) {
     configurable: false,
   });
 }
-
-// get function
-// get(url, callback)
 j3.get = function (url, callback) {
   try {
     fetch(url)
@@ -423,4 +375,3 @@ for (const [k, v] of Object.entries(j3)) {
 
 Object.freeze(j3) && Object.seal(j3);
 
-console.log(j3);
