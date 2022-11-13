@@ -13,29 +13,9 @@ Below is a list of the some of the things J3.JS can do:
 - Sort HTML elements (A - Z)
 - Make image slide show
 - Display object properties/values to HTML elements using a placeholder `{ property_name }`
-- 
-
-### Complete J3.JS API Reference
-- `j3.hide(selector, callback)` - Hides HTML elements
-- `j3.show(selector, callback)` - Shows HTML elements	
-- `j3.toggleShow(selector, callback)` - Toggles between hiding and showing HTML elements	
-- `j3.toggleClass(selector, class, callback)` - Toggles the class of HTML elements
-- `j3.removeClass(selector, className: String | Array[ ...classnames ], callback)` - Removes one or multiple classes from HTML elements
-- `j3.addClass(selector, className: String | [ ...classnames ], callback)` - Adds one or multiple classes to HTML elements	
-- `j3.addStyle(selector, stye: { prop: value } | string, callback)` -	Adds style to HTML elements		
-- `j3.filter(selector, value, callback)`	- Filters the display of HTML elements	
-- `j3.sort(selector, callback)`	-	Sorts the display of HTML elements (A - Z, 0 - 9)	
-- `j3.slideSHow(selector, [ ...srcs ], delay, callback)`	- Make image slideshow 
-- `j3.displayObject(selector, object, callback)`	-	Displays JavaScript objects in HTML	
-- `j3.includeHTML(callback)`	-	Displays HTML in HTML	
-- `j3.getHttpObject(url, callback)`	-	Reads JSON data from a server	
-- `j3.get(url, callback)` - Performed `GET` Request and	Reads data from a server
-### Complete J3.JS Attribute Reference
-- `{ }` - Defines where to display data	
-- `data-repeat="container"` -	Defines where to repeat data	
-- `data-html="sample-text.txt"` -	Defines where to include HTML
 
 
+# J3.JS Intro
 ## Adding J3.JS to Your Web Pages
 There are only one ways to start using J3.JS on your web site: \
 - Download the J3.JS file
