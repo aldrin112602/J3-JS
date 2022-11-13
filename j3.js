@@ -1,10 +1,8 @@
-
-
 //       J3.JS LIBRARY
 //       NOVEMBER 12, 2022
 //       BY ALDRIN CABALLERO
 
-
+"use strict";
 const j3 = {};
 const $ = (element_selector) => {
   let element =
@@ -23,6 +21,7 @@ const $ = (element_selector) => {
   }
   return element;
 };
+
 j3.hide = function (selector, callback) {
   let e = $(selector);
   try {
@@ -43,6 +42,7 @@ j3.hide = function (selector, callback) {
     console.error(err);
   }
 };
+
 j3.show = function (selector, callback) {
   let e = $(selector);
   try {
@@ -59,6 +59,7 @@ j3.show = function (selector, callback) {
     console.error(err);
   }
 };
+
 j3.toggleShow = function (selector, callback) {
   let e = $(selector);
   try {
@@ -76,6 +77,7 @@ j3.toggleShow = function (selector, callback) {
     console.error(err);
   }
 };
+
 j3.toggleClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -92,6 +94,7 @@ j3.toggleClass = function (selector, className, callback) {
     console.error(err);
   }
 };
+
 j3.addClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -121,6 +124,7 @@ j3.addClass = function (selector, className, callback) {
     console.error(err);
   }
 };
+
 j3.removeClass = function (selector, className, callback) {
   let e = $(selector);
   try {
@@ -150,6 +154,7 @@ j3.removeClass = function (selector, className, callback) {
     console.error(err);
   }
 };
+
 j3.addStyle = function (selector, style, callback) {
   let e = $(selector);
   try {
@@ -187,6 +192,7 @@ j3.addStyle = function (selector, style, callback) {
     console.error(err);
   }
 };
+
 j3.filter = function (selector, value, callback) {
   let e = $(selector);
   try {
@@ -219,6 +225,7 @@ j3.filter = function (selector, value, callback) {
     console.error(err);
   }
 };
+
 j3.sort = function (selector, callback) {
   let e = $(selector);
   try {
@@ -243,6 +250,7 @@ j3.sort = function (selector, callback) {
     console.error(err);
   }
 };
+
 j3.slideShow = function (selector, src, delay, callback) {
   let e = $(selector);
   try {
@@ -276,6 +284,7 @@ j3.slideShow = function (selector, src, delay, callback) {
     console.error(err);
   }
 };
+
 j3.displayObject = function (selector, object, callback) {
   let e = $(selector);
   try {
@@ -309,13 +318,13 @@ j3.displayObject = function (selector, object, callback) {
         }
       });
     }
-
     e.innerHTML = html;
     if (typeof callback == "function") callback();
   } catch (err) {
     console.error(err);
   }
 };
+
 j3.includeHTML = function (callback) {
   [...document.querySelectorAll("*")]
     .filter((li) => li.getAttribute("data-html"))
@@ -336,6 +345,7 @@ j3.includeHTML = function (callback) {
       }
     });
 };
+
 j3.getHttpObject = function (url, callback) {
   try {
     fetch(url)
@@ -347,13 +357,7 @@ j3.getHttpObject = function (url, callback) {
     console.error(err);
   }
 };
-for (const [k, v] of Object.entries(j3)) {
-  Object.defineProperty(j3, k, {
-    enumerable: false,
-    writable: false,
-    configurable: false,
-  });
-}
+
 j3.get = function (url, callback) {
   try {
     fetch(url)
@@ -370,8 +374,44 @@ for (const [k, v] of Object.entries(j3)) {
     enumerable: false,
     writable: false,
     configurable: false,
+    value: v,
   });
 }
-
+const J3 = (selector) => {
+  let element;
+  try {
+    element =
+      typeof selector == "string"
+        ? document.querySelectorAll(selector)
+        : selector;
+  } catch (error) {
+    console.error(error);
+  }
+  let Event = {
+    on: function (event, callback) {
+      if (element && element == "[object NodeList]") {
+        try {
+          element.forEach((el) => {
+            el.addEventListener(event, callback);
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        element.addEventListener(event, callback);
+      }
+    },
+  };
+  for (const [k, v] of Object.entries(Event)) {
+    Object.defineProperty(Event, k, {
+      enumerable: false,
+      writable: false,
+      configurable: false,
+      value: v,
+    });
+  }
+  return Event;
+};
 Object.freeze(j3) && Object.seal(j3);
+
 
