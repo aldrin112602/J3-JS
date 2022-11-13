@@ -1,5 +1,5 @@
 {
-  "name": "j3",
+  "name": "j3.JS",
   "version": "1.0.0",
   "description": "",
   "main": "j3.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aldrin112602/J3.git"
+    "url": "git+https://github.com/aldrin112602/J3.JS.git"
   },
   "keywords": [
     "J3"
@@ -16,7 +16,7 @@
   "author": "Aldrin E. Caballero",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aldrin112602/J3/issues"
+    "url": "https://github.com/aldrin112602/J3.JS/issues"
   },
-  "homepage": "https://github.com/aldrin112602/J3#readme"
+  "homepage": "https://github.com/aldrin112602/J3.JS#readme"
 }
