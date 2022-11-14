@@ -43,7 +43,7 @@ Below is a list of the some of the things J3.JS can do:
 
 | Attribute             | Description                                    |
 | :-------------------- | :--------------------------------------------- |
-| `{  } `       | Defines as a placeholder where to display data |
+| `{ } `                | Defines as a placeholder where to display data |
 | `data-repeat="data"`  | Defines where to repeat data                   |
 | `data-include="path"` | Defines where to include HTML or file          |
 
@@ -76,7 +76,7 @@ There is only one way to start using `J3.JS` on your web site:
 
 # Get started!
 
-### J3.JS Selectors
+## J3.JS Selectors
 
 - J3.JS selects HTML elements and perform actions on the selected element(s):\
   Are you familiar with CSS selectors?\
@@ -120,7 +120,79 @@ j3.hide(".city");
 
 For a complete reference of all CSS selectors, please go to [CSS Selectors Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-### J3.JS Hide & Show
+## ready() function
+
+- Use ready() to make a function available after the document is loaded. This event occurs after the document is ready, it is a good place to have all other J3 events and functions.
+
+Syntax
+
+```javascript
+J3(document).ready(callback: Function)
+```
+
+Example:
+
+```javascript
+J3(document).ready(function () {
+  // document ready!
+  // Place all other J3 events and functions here
+  console.log("Document ready!");
+});
+```
+
+Full example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <!-- place your J3.JS file here -->
+    <script src="src/j3.js"></script>
+  </head>
+  <body>
+    <h1 id="myid">Welcome to J3.JS library</h1>
+    <p id="myid">A libray designed to simplify web development projects</p>
+    <script>
+      J3(document).ready(function () {
+        // document ready!
+        // Place all other J3 events and functions here
+
+        // Hide all elements with an ID of 'myid'
+        j3.hide("#myid");
+      });
+    </script>
+  </body>
+</html>
+```
+
+## on() function
+
+- Use to add an event to HTML elements
+
+Syntax
+
+```javascript
+J3(selector: Any).on(event: Any, callback: Function);
+```
+
+Example:
+
+```javascript
+J3(document).ready(function () {
+  // Add an 'onclick' event to all button inside the document
+  J3("button").on("click", function () {
+    alert("You click button");
+  });
+});
+```
+
+## J3.JS Hide & Show
+
+Syntax:
 
 ```javascript
    j3.hide(selector: Any, callback: Function)
