@@ -1,6 +1,10 @@
+
+
 //       J3.JS LIBRARY
 //       NOVEMBER 12, 2022
 //       BY ALDRIN CABALLERO
+
+
 
 "use strict";
 const j3 = {};
@@ -313,7 +317,7 @@ j3.displayObject = function (selector, object, callback) {
                   .replaceAll(`{${k} }`, v);
               }
             } else {
-              html += item.outerHTML
+              html += item.outerHTML;
               for (const [k, v] of Object.entries(val[i])) {
                 html = html
                   .replaceAll("&lt;", "<")
