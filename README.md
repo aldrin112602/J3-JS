@@ -1,6 +1,19 @@
 # J3.JS - “ Less code, do More! 😎 ”
 
-A JavaScript library developed by _ALdrin Caballero_ is designed to simplify web development projects: Easy to learn and easy to use. Designed for fast application development. Designed for all devices: PC, Tablet, and Mobile, Free to use and No licenses.
+- A JavaScript library developed by _ALdrin Caballero_ is designed to simplify web development projects: Easy to learn and easy to use. 
+
+- Designed for fast application development. 
+
+- Designed for all devices: PC, Tablet, and Mobile, Free to use and No licenses.
+
+ - Designed to make it much easier to use JavaScript on your website.
+
+### What You Should Already Know?
+Before you start studying J3.JS, you should have a basic knowledge of:
+
+- *HTML*
+- *CSS*
+- *JavaScript*
 
 ### What Can J3.JS Do?
 
@@ -51,10 +64,17 @@ Below is a list of the some of the things J3.JS can do:
 
 ## Adding J3.JS to Your Web Pages
 
-There is only one way to start using `J3.JS` on your web site:
+J3.JS is very easy to use.\
+Just add a link of J3.js in your web page:
 
-- Download the J3.JS file
-- The J3.JS library is a single JavaScript file, and you reference it with the HTML `<script>` tag (notice that the `<script>` tag should be inside the `<head>` section) :
+Using a `CDN`:
+```javascript
+"https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"
+```
+
+```javascript
+<script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"></script>
+```
 
 ```html
 <!DOCTYPE html>
@@ -65,14 +85,38 @@ There is only one way to start using `J3.JS` on your web site:
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <!-- place J3.JS here -->
-    <script src="j3.js"></script>
+    <!-- place J3.JS CDN here -->
+    <script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"></script>
   </head>
-  <body></body>
+  <body>
+  
+  </body>
 </html>
 ```
 
-- <b>Tip:</b> Place the downloaded file in the same directory as the pages where you wish to use it.
+Or download the `J3.JS` file and add link to the file
+
+The J3.JS library is a single JavaScript file, and you reference it with the HTML `<script>` tag (notice that the `<script>` tag should be inside the `<head>` section):
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- place J3.JS file here -->
+    <script src="j3.js"></script>
+  </head>
+  <body>
+  
+  </body>
+</html>
+```
+
+<b>Tip:</b> Place the downloaded file in the same directory as the pages where you wish to use it.
 
 # Get started!
 
@@ -150,8 +194,8 @@ Full example:
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <!-- place your J3.JS file here -->
-    <script src="src/j3.js"></script>
+    <!-- J3.JS -->
+    <script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"></script>
   </head>
   <body>
     <h1 id="myid">Welcome to J3.JS library</h1>
@@ -230,8 +274,8 @@ Full example:
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>j3.hide(selector) | J3.JS</title>
 
-    <!-- place J3.JS here -->
-    <script src="j3.js"></script>
+    <!-- J3.JS -->
+    <script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"></script>
   </head>
   <body>
     <button onclick="j3.hide('#london')">
