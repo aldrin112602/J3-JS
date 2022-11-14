@@ -180,7 +180,7 @@ j3.addStyle = function (selector, style, callback) {
           css += `${key
             .split(/(?=[A-Z])/)
             .join("-")
-            .toLowerCase()}: ${val.toLowerCase()}; `;
+            .toLowerCase()}: ${String(val).toLowerCase()}; `;
         }
         e.style = css;
       } else {
@@ -290,9 +290,11 @@ j3.displayObject = function (selector, object, callback) {
   try {
     e = e && "length" in e ? e[0] : e;
     let html = e.innerHTML;
+
     let repeat_attr = [...e.querySelectorAll("*")].filter((element) =>
       element.getAttribute("data-repeat")
     );
+
     for (const [prop, val] of Object.entries(object)) {
       html = html
         .replaceAll(`{ ${prop} }`, val)
@@ -301,20 +303,29 @@ j3.displayObject = function (selector, object, callback) {
         .replaceAll(`{${prop} }`, val);
       repeat_attr.forEach((item) => {
         if (item.getAttribute("data-repeat") == prop) {
-          let htmlChild = item.innerHTML;
-          item.innerHTML = "";
-          val.forEach((tr, i) => {
-            let obj_html = htmlChild;
-            for (const [k, v] of Object.entries(tr)) {
-              obj_html = obj_html
-                .replaceAll(`{ ${k} }`, v)
-                .replaceAll(`{${k}}`, v)
-                .replaceAll(`{ ${k}}`, v)
-                .replaceAll(`{${k} }`, v);
+          for (let i = 0; i < val.length; i++) {
+            if (i == 0) {
+              for (const [k, v] of Object.entries(val[i])) {
+                html = html
+                  .replaceAll(`{ ${k} }`, v)
+                  .replaceAll(`{${k}}`, v)
+                  .replaceAll(`{ ${k}}`, v)
+                  .replaceAll(`{${k} }`, v);
+              }
+            } else {
+              html += item.outerHTML
+              for (const [k, v] of Object.entries(val[i])) {
+                html = html
+                  .replaceAll("&lt;", "<")
+                  .replaceAll("</tbody>", "")
+                  .replaceAll("&gt;", ">")
+                  .replaceAll(`{ ${k} }`, v)
+                  .replaceAll(`{${k}}`, v)
+                  .replaceAll(`{ ${k}}`, v)
+                  .replaceAll(`{${k} }`, v);
+              }
             }
-            e.appendChild(item);
-            item.innerHTML = obj_html;
-          });
+          }
         }
       });
     }
@@ -401,6 +412,14 @@ const J3 = (selector) => {
         element.addEventListener(event, callback);
       }
     },
+    ready: function (callback) {
+      if (
+        !(element && element == "[object NodeList]") &&
+        typeof callback == "function"
+      ) {
+        element.addEventListener("DOMContentLoaded", callback);
+      }
+    },
   };
   for (const [k, v] of Object.entries(Event)) {
     Object.defineProperty(Event, k, {
@@ -413,5 +432,3 @@ const J3 = (selector) => {
   return Event;
 };
 Object.freeze(j3) && Object.seal(j3);
-
-
