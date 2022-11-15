@@ -605,4 +605,4 @@ var J3 = function J3(selector) {
   }
   return Event;
 };
-Object.freeze(j3) && Object.seal(j3);
+Object.freeze(j3) && Object.seal(j3) && console.warn('You are now using J3.JS library.\nFor documentation go to tihs link: https://github.com/aldrin112602/J3.JS#readme');
