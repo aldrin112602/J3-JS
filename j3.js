@@ -1,6 +1,7 @@
 
 
-//       J3.JS LIBRARY
+//       J3.JS LIBRARY 
+//       Version 1.0.0
 //       NOVEMBER 12, 2022
 //       BY ALDRIN CABALLERO
 
