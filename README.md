@@ -1,5 +1,4 @@
-# J3.JS - “ Less code, do More! 😎 ”
-
+# J3.JS
 - A JavaScript library developed by _ALdrin Caballero_ is designed to simplify web development projects: Easy to learn and easy to use. 
 
 - Designed for fast application development. 
