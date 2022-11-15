@@ -67,12 +67,18 @@ J3.JS is very easy to use.\
 Just add a link of J3.js in your web page:
 
 Using a `CDN`:
-```javascript
-"https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"
-```
+`https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js`
+
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.js"></script>
+```
+
+Or using minified version of the `javascript` file.\
+*It's primarily used while the website is being launched in order to reduce the load for the particular website.*
+
+```javascript
+<script src="https://cdn.jsdelivr.net/gh/aldrin112602/J3.JS/j3.min.js"></script>
 ```
 
 ```html
