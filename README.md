@@ -31,6 +31,22 @@ Below is a list of the some of the things J3.JS can do:
 - Make image slide show
 - Display object properties/values to HTML elements using a placeholder `{ property_name }`
 
+```javascript
+addClass: ƒ (selector, className, callback)
+addStyle: ƒ (selector, style, callback)
+displayObject: ƒ (selector, object, callback)
+filter: ƒ (selector, value, callback)
+get: ƒ (url, callback)
+getHttpObject: ƒ (url, callback)
+hide: ƒ (selector, callback)
+includeHTML: ƒ (callback)
+removeClass: ƒ (selector, className, callback)
+show: ƒ (selector, callback)
+slideShow: ƒ (selector, src, delay, callback)
+sort: ƒ (selector, callback)
+toggleClass: ƒ (selector, className, callback)
+toggleShow: ƒ (selector, callback)
+```
 ## Complete J3.JS API Reference
 
 | Function                                       | Description                                                                                                                                                                         |
