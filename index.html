@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- bootstrap 5.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <title>Document Sample</title>
 
     <!-- j3.js file -->
     <script src="j3.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="d-grid p-5">
-        <button class="btn btn-dark btn-block">Click me</button>
+      <button class="btn btn-dark btn-block">Click me</button>
     </div>
     <script>
-        J3(document).ready(function() {
-            J3('button').on('click', function() {
+      J3(document).ready(function () {
+        J3("button").on("click", function () {
+          // add class to our button
+          j3.addClass("button", ["btn-primary", "btn-lg"], function () {
+            console.log("Class `btn-primary` was added to button");
+            // then try to remove btn-dark class
+            j3.removeClass("button", "btn-dark", function () {
+              console.log("Class `btn-dark` was removed from button");
+            });
+          });
 
-                // add class to our button
-                j3.addClass('button', 'btn-primary btn-lg', function() {
-                    console.log('Class `btn-primary` was added to button')
-
-                    // then try to remove btn-dark class
-                    j3.removeClass('button', 'btn-dark', function() {
-                        console.log('Class `btn-dark` was removed to button')
-                    })
-
-                })
-            })
-        })
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
