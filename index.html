@@ -13,13 +13,15 @@
     <script src="j3.js"></script>
 </head>
 <body>
-    <button class="btn btn-dark btn-block">Click me</button>
+    <div class="d-grid p-5">
+        <button class="btn btn-dark btn-block">Click me</button>
+    </div>
     <script>
         J3(document).ready(function() {
             J3('button').on('click', function() {
 
                 // add class to our button
-                j3.addClass('button', 'btn-primary', function() {
+                j3.addClass('button', 'btn-primary btn-lg', function() {
                     console.log('Class `btn-primary` was added to button')
 
                     // then try to remove btn-dark class

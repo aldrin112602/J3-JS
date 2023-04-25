@@ -98,33 +98,38 @@ j3.toggleClass = function (selector, className, callback) {
 
 j3.addClass = function (selector, className, callback) {
   let e = $(selector);
-  try {
-    if ("length" in e) {
-      e.forEach((element) => {
-        if (typeof className != "string" && Array.isArray(className)) {
-          className.forEach((cls) => {
-            element.classList.add(cls);
-          });
-        } else {
-          element.classList.add(className);
-        }
-      });
-      if (typeof callback == "function") callback();
-    } else {
-      e.classList.add(className);
+  if (!e) {
+    console.error("Element not found: " + selector);
+    return;
+  }
+  if (Array.isArray(e)) {
+    e.forEach((element) => {
       if (typeof className != "string" && Array.isArray(className)) {
         className.forEach((cls) => {
-          e.classList.add(cls);
+          element.classList.add(cls.replace(/\s+/g, " "));
         });
       } else {
-        e.classList.add(className);
+        className.split(/\s+/).forEach((c) => {
+          element.classList.add(c);
+        });
       }
-      if (typeof callback == "function") callback();
+    });
+  } else {
+    if (typeof className != "string" && Array.isArray(className)) {
+      className.forEach((cls) => {
+        e.classList.add(cls.replace(/\s+/g, " "));
+      });
+    } else {
+      className.split(/\s+/).forEach((c) => {
+        e.classList.add(c);
+      });
     }
-  } catch (err) {
-    console.error(err);
+  }
+  if (typeof callback == "function") {
+    callback();
   }
 };
+
 
 j3.removeClass = function (selector, className, callback) {
   let e = $(selector);
